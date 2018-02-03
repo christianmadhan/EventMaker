@@ -5,12 +5,18 @@
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:App1.View_Model"
     mc:Ignorable="d">
 
     <Grid Background="#2d2d2d">
+        
+        <Grid.DataContext>
+            <viewModel:EventViewModel />
+        </Grid.DataContext>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="700"/>
+            <ColumnDefinition Width="1000"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
@@ -26,20 +32,52 @@
                 <TextBlock Text="Amazing Event Maker" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
-        
-        <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Background="White">
-            
-            <ListView>
-                
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="White" BorderThickness="5,5,5,5" CornerRadius="10,10,10,10">
+            <ListView
+                ItemsSource="{Binding EventList}"
+                SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"
+                >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                                    <TextBlock Text="Id:  "/>
+                                    <TextBlock Text="{Binding Id}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Name:  "/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Description: "/>
+                                    <TextBlock Text="{Binding Description}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Name: "/>
+                                    <TextBlock Text="{Binding Date}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Tid: "/>
+                                    <TextBlock Text="{Binding Time}"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 
             </ListView>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Create Event" Command="{Binding GoToCreateEventPage}" Margin="10,10,0,0"/>
+                <Button Content="Delete Event" Command="{Binding DeleteEvent}" Margin="10,10,0,0"/>
+                <Button Content="Update Event" Command="{Binding GoToUpdateEventPage}" Margin="10,10,0,0"/>
+            </StackPanel>
         
         </StackPanel>
         
     </Grid>
 </Page>
+

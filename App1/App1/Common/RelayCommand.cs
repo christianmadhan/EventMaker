@@ -15,7 +15,7 @@ namespace App1.Common
         /// <summary>
         /// Raised when RaiseCanExecuteChanged is called.
         /// </summary>
-        public event EventHandler CanExecuteChanged;
+        public event System.EventHandler CanExecuteChanged;
 
         /// <summary>
         /// Creates a new command that can always execute.

@@ -9,6 +9,9 @@ namespace App1.Model
 {
     class Event
     {
+        private DatePicker _datePicker;
+        private TimePicker _timePicker;
+
         private string _date;
         private DateTime _time;
         private int _id;
@@ -26,10 +29,33 @@ namespace App1.Model
             _place = place;
         }
 
+        public Event(DatePicker datePicker, TimePicker timePicker, int id, string description, string name, string place)
+        {
+            _datePicker = datePicker;
+            _timePicker = timePicker;
+            _id = id;
+            _description = description;
+            _name = name;
+            _place = place;
+
+        }
+
         // Empty constructer for the relay command
         public Event(){}
 
         // Get and set instance fields.
+
+        public DatePicker PickerDate
+        {
+            get => _datePicker;
+            set => _datePicker = value;
+        }
+
+        public TimePicker PickerTime
+        {
+            get => _timePicker;
+            set => _timePicker = value;
+        }
 
         public string Date { get => _date; set => _date = value; }
         public DateTime Time { get => _time; set => _time = value; }
