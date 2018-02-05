@@ -34,8 +34,6 @@ namespace App1.View_Model
 
         public RelayCommand DeleteEvent { get; set; }
 
-        public RelayCommand GoToUpdateEventPage { get; set; }
-
         public Event SelectedEvent
         {
             get => _selectedEvent;
@@ -72,7 +70,6 @@ namespace App1.View_Model
 
             GoToCreateEventPage = new RelayCommand(DoGoToCreatePage);
             DeleteEvent = new RelayCommand(DoDeleteEvent);
-            GoToUpdateEventPage = new RelayCommand(DoGoToUpdatePage);
 
             _selectedEvent = new Event();
             _frameNavigate = new FrameNavigate();
@@ -99,15 +96,6 @@ namespace App1.View_Model
             }
             
         }
-
-        public void DoGoToUpdatePage()
-        {
-
-        }
-
-
-
-
 
     }
 }

@@ -39,7 +39,6 @@ namespace App1.EventHandler
         public CrudEvent()
         {
             CreateEvent = new RelayCommand(DoCreateEvent);
-            UpdateEvent = new RelayCommand(DoUpdateEvent);
             _frameNavigate = new FrameNavigate();
         }
 
@@ -69,12 +68,6 @@ namespace App1.EventHandler
                 await message.ShowAsync();
             }
         }
-
-        public void DoUpdateEvent()
-        {
-            
-        }
-
 
     }
 }

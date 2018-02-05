@@ -73,7 +73,6 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="Create Event" Command="{Binding GoToCreateEventPage}" Margin="10,10,0,0"/>
                 <Button Content="Delete Event" Command="{Binding DeleteEvent}" Margin="10,10,0,0"/>
-                <Button Content="Update Event" Command="{Binding GoToUpdateEventPage}" Margin="10,10,0,0"/>
             </StackPanel>
         
         </StackPanel>
