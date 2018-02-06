@@ -56,12 +56,28 @@
                                     <TextBlock Text="{Binding Description}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Name: "/>
+                                    <TextBlock Text="Place: "/>
+                                    <TextBlock Text="{Binding Place}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Tid: "/>
+                                    <TextBlock Text="{Binding Time}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Date: "/>
                                     <TextBlock Text="{Binding Date}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Tid: "/>
                                     <TextBlock Text="{Binding Time}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Picker time: "/>
+                                    <TextBlock Text="{Binding PickerTime}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Picker Date: "/>
+                                    <TextBlock Text="{Binding PickerDate}"/>
                                 </StackPanel>
 
                             </StackPanel>

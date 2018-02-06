@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using App1.Common;
 
 namespace App1.Model
 {
-    class Event
+    class Event : NotifyChanged
     {
         private DatePicker _datePicker;
         private TimePicker _timePicker;
@@ -48,21 +49,61 @@ namespace App1.Model
         public DatePicker PickerDate
         {
             get => _datePicker;
-            set => _datePicker = value;
+            set { _datePicker = value; OnPropertyChanged(nameof(PickerDate)); }
+
         }
 
         public TimePicker PickerTime
         {
             get => _timePicker;
-            set => _timePicker = value;
+            set { _timePicker = value; OnPropertyChanged(nameof(PickerTime)); }
         }
 
-        public string Date { get => _date; set => _date = value; }
-        public DateTime Time { get => _time; set => _time = value; }
-        public int Id { get => _id; set => _id = value; }
-        public string Description { get => _description; set => _description = value; }
-        public string Name { get => _name; set => _name = value; }
-        public string Place { get => _place; set => _place = value; }
+        public string Date { get => _date;
+            set
+            {
+                _date = value;
+                OnPropertyChanged(nameof(Date));
+                
+            }
+        }
+
+        public DateTime Time
+        {
+            get => _time;
+            set
+            {
+                _time = value;
+                OnPropertyChanged(nameof(Time));
+            }
+        }
+        public int Id { 
+           
+            get => _id;
+            set
+            {
+                _id = value; 
+                OnPropertyChanged(nameof(Id));
+            }
+        }
+
+        public string Description
+        {
+            get => _description;
+            set { _description = value; OnPropertyChanged(nameof(Description)); }
+        }
+
+        public string Name
+        {
+            get => _name;
+            set { _name = value; OnPropertyChanged(nameof(Name)); }
+        }
+
+        public string Place
+        {
+            get => _place;
+            set { _place = value; OnPropertyChanged(nameof(Place)); }
+        }
 
         /*
          *  Tostring method that returns all the information

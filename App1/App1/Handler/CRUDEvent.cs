@@ -24,6 +24,7 @@ namespace App1.EventHandler
 
         public DatePicker Date { get; set; }
 
+
         public TimePicker Time { get; set; }
 
         public int Id { get; set; }
@@ -33,7 +34,6 @@ namespace App1.EventHandler
         public string Name { get; set; }
 
         public string Place { get; set; }
-
 
 
         public CrudEvent()

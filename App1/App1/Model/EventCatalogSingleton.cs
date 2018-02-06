@@ -23,11 +23,11 @@ namespace App1.Model
         {
             EventList = new ObservableCollection<Event>()
             {
-                new Event("01-02-2018", DateTime.Now, 2,"Her sker der noget"," Køge festuge"," Køge"),
-                new Event("01-02-2018", DateTime.Today, 3,"Danmark sjoveste sted","Holbæk festival","Holbæk"),
-                new Event("01-02-2018", DateTime.Now, 2,"Information om rummtet","Journey out into space","Ringsted"),
-                new Event("01-02-2018", DateTime.Now, 2,"Lector omkring inflationen","Økonomisk krise i 00'erne "," København H"),
-
+                new Event("01-02-2018", Convert.ToDateTime("22:00"), 2,"Her sker der noget"," Køge festuge"," Køge"),
+                new Event("01-02-2018", DateTime.Now.ToLocalTime(), 3,"Danmark sjoveste sted","Holbæk festival","Holbæk"),
+                new Event("01-02-2018", DateTime.Now.ToLocalTime(), 2,"Information om rummtet","Journey out into space","Ringsted"),
+                new Event("01-02-2018", DateTime.Now.ToLocalTime(), 2,"Lector omkring inflationen","Økonomisk krise i 00'erne "," København H"),
+            
             };
         }
 
