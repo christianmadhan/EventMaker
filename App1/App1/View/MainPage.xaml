@@ -8,32 +8,34 @@
     xmlns:viewModel="using:App1.View_Model"
     mc:Ignorable="d">
 
-    <Grid Background="#2d2d2d">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush
+                ImageSource="../Assets/solid-color-wallpaper-21962-22515-hd-wallpapers.jpg"></ImageBrush>
+        </Grid.Background>
         
         <Grid.DataContext>
             <viewModel:EventViewModel />
         </Grid.DataContext>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="1000"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Background="White" Grid.Column="1"  BorderThickness="5,5,5,5">
-            <StackPanel>
-                <TextBlock Text="Amazing Event Maker" HorizontalAlignment="Center"/>
-            </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock  Text="Christian Madhan Witt" FontSize="100" Foreground="White" FontFamily="Forte" />
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="White" BorderThickness="5,5,5,5" CornerRadius="10,10,10,10">
+        <ListBox Grid.Column="1" Grid.Row="1"   BorderThickness="5,5,5,5" Background="{x:Null}" BorderBrush="{x:Null}"  >
             <ListView
                 ItemsSource="{Binding EventList}"
                 SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"
@@ -41,58 +43,72 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" Width="360">
                                 
                                 <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
-                                    <TextBlock Text="Id:  "/>
-                                    <TextBlock Text="{Binding Id}"/>
+                                    <TextBlock Text="ID:  " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Id}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Name:  "/>
-                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text="Name:  "  Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Name}"  Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Description: "/>
-                                    <TextBlock Text="{Binding Description}"/>
+                                    <TextBlock Text="Description: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Description}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Place: "/>
-                                    <TextBlock Text="{Binding Place}"/>
+                                    <TextBlock Text="Place: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Place}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="25"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Tid: "/>
-                                    <TextBlock Text="{Binding Time}"/>
+                                    <TextBlock Text="Tid: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Time}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Date: "/>
-                                    <TextBlock Text="{Binding Date}"/>
+                                    <TextBlock Text="Date: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Date}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Tid: "/>
-                                    <TextBlock Text="{Binding Time}"/>
+                                    <TextBlock Text="Tid: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding Time}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Picker time: "/>
-                                    <TextBlock Text="{Binding PickerTime}"/>
+                                    <TextBlock Text="Picker time: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding PickerTime}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Picker Date: "/>
-                                    <TextBlock Text="{Binding PickerDate}"/>
+                                    <TextBlock Text="Picker Date: " Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="{Binding PickerDate}" Foreground="White"  FontWeight="Bold" FontStyle="Oblique" TextAlignment="Center" FontSize="20"/>
                                 </StackPanel>
 
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid  Orientation="Horizontal" MaximumRowsOrColumns="3"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
             </ListView>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Create Event" Command="{Binding GoToCreateEventPage}" Margin="10,10,0,0"/>
-                <Button Content="Delete Event" Command="{Binding DeleteEvent}" Margin="10,10,0,0"/>
+            
+        </ListBox>
+        <Grid Column="1" Row="2">
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Command="{Binding GoToCreateEventPage}" Height="80" Width="450" Content="Create"  Foreground="White" FontSize="30" ></Button>
             </StackPanel>
-        
-        </StackPanel>
-        
+            
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Command="{Binding DeleteEvent}" Height="80" Width="450" Content="Delete"  Foreground="White" FontSize="30" ></Button>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Page>
 

@@ -8,54 +8,133 @@
     xmlns:eventHandler="using:App1.EventHandler"
     mc:Ignorable="d">
 
-    <Grid Background="#2d2d2d">
+    <Grid>
 
-       <Grid.DataContext>
+        <Grid.DataContext>
             <eventHandler:CrudEvent/>
-       </Grid.DataContext>
-        
+        </Grid.DataContext>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="700"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Background="White" BorderThickness="5,5,5,5" CornerRadius="10,10,10,10">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="ID"/>
-                <TextBox Width="100" Text="{Binding Id, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Description"/>
-                <TextBox Width="300" Margin="5,0,0,0" Text="{Binding Description, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Name"/>
-                <TextBox Width="300" Margin="35,0,0,0" Text="{Binding Name, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Place"/>
-                <TextBox Width="300" Margin="35,0,0,0" Text="{Binding Place, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Date: "/>
-                <DatePicker Margin="29,0,0,0" Date="{Binding Date, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Time"/>
-                <TimePicker Time="{Binding Time, Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                 <Button Content="Create" Command="{Binding CreateEvent}"/>
-             </StackPanel>
+
+        <Grid.Background>
+            <ImageBrush
+            ImageSource="../Assets/solid-color-wallpaper-21962-22515-hd-wallpapers.jpg"></ImageBrush>
+        </Grid.Background>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock  Text="Create your own event" FontSize="90" Foreground="White" FontFamily="Forte" />
         </StackPanel>
-        
+
+
+
+        <Grid Column="1" Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="ID: " Foreground="White" FontSize="30" TextAlignment="Right" FontWeight="Bold" FontStyle="Oblique" ></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox  Text="{Binding Id, Mode=TwoWay}" Width="450" Height="50" Foreground="White"  FontWeight="Bold" FontStyle="Oblique"  BorderThickness="0.5" TextAlignment="Center" FontSize="30"  >
+                       </TextBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Name: " Foreground="White" FontSize="30" FontWeight="Bold" FontStyle="Oblique"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox Text="{Binding Name, Mode=TwoWay}" Width="450" Height="50" FontWeight="Bold" FontStyle="Oblique" Foreground="White"  BorderThickness="0.5" TextAlignment="Center" FontSize="30">
+                        
+                    </TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Description: " Foreground="White" FontSize="30" FontWeight="Bold" FontStyle="Oblique"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox  Text="{Binding Description, Mode=TwoWay}" Width="450" FontWeight="Bold" Foreground="White" FontStyle="Oblique" Height="50"  BorderThickness="0.5" TextAlignment="Center" FontSize="30">
+                        
+                    </TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Place: " Foreground="White" FontSize="30" FontWeight="Bold" FontStyle="Oblique"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TextBox  Text="{Binding Place, Mode=TwoWay}" Width="450" FontWeight="Bold" FontStyle="Oblique" Height="50" BorderThickness="0.5" Foreground="White"  TextAlignment="Center" FontSize="30">
+                        
+                    </TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Time: " Foreground="White" FontSize="30" FontWeight="Bold" FontStyle="Oblique"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Height="52" BorderThickness="0">
+                    <DatePicker Date="{Binding Date, Mode=TwoWay}" Width="450"  FontSize="30" Foreground="White" BorderThickness="0" FontWeight="SemiBold" FontStyle="Italic" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="5" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                    <TextBlock Text="Date: " Foreground="White" FontSize="30" FontWeight="Bold" FontStyle="Oblique"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                    <TimePicker Time="{Binding Time, Mode=TwoWay}" Width="450" FontSize="25" Foreground="White" FontWeight="Bold" FontStyle="Oblique"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="6" >
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Create" Command="{Binding CreateEvent}" FontWeight="Bold" FontStyle="Oblique"  Height="80" Width="450"  Foreground="White" FontSize="30"  BorderThickness="4" />
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
     </Grid>
 </Page>
