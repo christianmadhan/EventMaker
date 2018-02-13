@@ -10,8 +10,8 @@ namespace App1.Model
 {
     class Event : NotifyChanged
     {
-        private DatePicker _datePicker;
-        private TimePicker _timePicker;
+        private DateTimeOffset _datePicker;
+        private TimeSpan _timePicker;
 
         private string _date;
         private DateTime _time;
@@ -30,7 +30,7 @@ namespace App1.Model
             _place = place;
         }
 
-        public Event(DatePicker datePicker, TimePicker timePicker, int id, string description, string name, string place)
+        public Event(DateTimeOffset datePicker, TimeSpan timePicker, int id, string description, string name, string place)
         {
             _datePicker = datePicker;
             _timePicker = timePicker;
@@ -46,14 +46,14 @@ namespace App1.Model
 
         // Get and set instance fields.
 
-        public DatePicker PickerDate
+        public DateTimeOffset PickerDate
         {
             get => _datePicker;
             set { _datePicker = value; OnPropertyChanged(nameof(PickerDate)); }
 
         }
 
-        public TimePicker PickerTime
+        public TimeSpan PickerTime
         {
             get => _timePicker;
             set { _timePicker = value; OnPropertyChanged(nameof(PickerTime)); }

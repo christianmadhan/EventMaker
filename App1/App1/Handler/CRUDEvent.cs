@@ -22,10 +22,10 @@ namespace App1.EventHandler
 
         private readonly FrameNavigate _frameNavigate;
 
-        public DatePicker Date { get; set; }
+        public DateTimeOffset DatePickerValue { get; set; }
 
 
-        public TimePicker Time { get; set; }
+        public TimeSpan TimePickerValue { get; set; }
 
         public int Id { get; set; }
 
@@ -46,9 +46,12 @@ namespace App1.EventHandler
         {
             try
             {
+
+                Dat
+
                 Event _event = new Event();
-                _event.PickerDate = Date;
-                _event.PickerTime = Time;
+                _event.PickerDate = DatePickerValue;
+                _event.PickerTime = TimePickerValue;
                 _event.Id = Id;
                 _event.Name = Name;
                 _event.Description = Description;
